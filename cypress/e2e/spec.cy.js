@@ -128,7 +128,7 @@ describe('Cypress Apps Testing', () => {
         cy.get('#scroll-horizontal button')
             .should('not.be.visible')
 
-// scroll the button into view, as if the user had scrolled
+        // scroll the button into view, as if the user had scrolled
         cy.get('#scroll-horizontal button').scrollIntoView()
         cy.get('#scroll-horizontal button')
             .should('be.visible')
