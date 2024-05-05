@@ -4,8 +4,8 @@ describe('Cypress Apps Testing', () => {
         //To find this element by its contents, we'll use cy.contains().
         cy.contains('type').click()
         // Should be on a new URL which
-        // includes '/commands/actions'
         cy.url().should('include', '/commands/actions')
+
 
         // // Get an input, type into it
         cy.get('.action-email').type('fake@email.com')
