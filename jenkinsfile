@@ -12,8 +12,10 @@ pipline{
     }
 
     stages{
-        stage('Deploying'){
-            echo "Building the application"
+        stage('Building'){
+            steps{
+                echo "Building the application"
+            }
         }
         stage('Testing'){
             steps{
@@ -23,9 +25,11 @@ pipline{
             }
         }
          stage('Deploying'){
+            steps{
                 echo "Deploying the application"
-          }
-     }
+            }
+         }
+    }
 
      post{
         always{
