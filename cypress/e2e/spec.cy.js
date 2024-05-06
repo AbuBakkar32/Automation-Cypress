@@ -151,8 +151,7 @@ describe('Cypress Apps Testing', () => {
 
         //set timer to wait 2 seconds
         cy.wait(2000)
-    })
-    it('triger input range', () => {
+
         cy.get('.trigger-input-range')
             .invoke('val', 25)
         cy.get('.trigger-input-range')
