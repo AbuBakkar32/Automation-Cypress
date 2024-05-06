@@ -30,7 +30,6 @@ pipeline{
 
      post{
         always{
-            mail bcc: '', body: '''Dear Abu, Your Cypress Project build successfully in Jenkins''', cc: '', from: '', replyTo: '', subject: 'Cypress Build Success', to: 'abubakkar.swe@gmail.com'
             publishHTML([allowMissing: true, alwaysLinkToLastBuild: true, includes: '**/*.png', keepAll: true, reportDir: 'cypress/report', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
         }
      }
