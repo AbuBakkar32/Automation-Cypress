@@ -77,4 +77,20 @@ describe("HTTP Request", () => {
             expect(response.body[0]).to.have.property('body')
         })
     })
+
+    it("GET Call with Basic Auth", () => {
+        cy.request({
+            method: "GET",
+            url: "https://jsonplaceholder.typicode.com/posts/1",
+            auth: {
+                username: "username",
+                password: "password"
+            }
+        }).then((response) => {
+            expect(response.status).to.eq(200)
+            expect(response.body).to.have.property('id')
+            expect(response.body).to.have.property('title')
+            expect(response.body).to.have.property('body')
+        })
+    })
 })
