@@ -8,11 +8,20 @@ function readDataFromExcel(data) {
 }
 
 module.exports = defineConfig({
+    reporter: 'mochawesome',
     projectId: '2k8vto',
+    video: true,
+    screenshots: true,
+    env: {
+        codeCoverage: {
+            url: 'http://localhost:5169/__coverage__',
+        },
+    },
     e2e: {
         experimentalRunAllSpecs: false,
         experimentalStudio: true,
         setupNodeEvents(on, config) {
+            require('@cypress/code-coverage/task')(on, config)
             on("task", {
                 log(message) {
                     console.log(message);

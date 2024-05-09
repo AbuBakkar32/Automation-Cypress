@@ -7,11 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "start": "cypress open --dev --global"
+    "start": "cypress open --dev --global",
+    "start:coverage": "nyc --silent node server",
+    "start:report": "nyc report --reporter=text-summary"
   },
   "author": "Abu Bakkar Siddikk",
   "license": "ISC",
   "devDependencies": {
+    "@cypress/code-coverage": "^3.12.39",
     "cypress": "^13.8.1",
     "mochawesome": "^7.1.3"
   },
