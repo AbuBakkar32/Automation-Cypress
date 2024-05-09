@@ -18,19 +18,17 @@ module.exports = defineConfig({
         },
     },
     e2e: {
-        experimentalRunAllSpecs: false,
-        experimentalStudio: true,
         setupNodeEvents(on, config) {
             require('@cypress/code-coverage/task')(on, config)
-            on("task", {
-                log(message) {
-                    console.log(message);
-                    return null;
-                },
-                readDataFromExcel: (data) => {
-                    return readDataFromExcel(data);
-                },
-            });
+            // on("task", {
+            //     log(message) {
+            //         console.log(message);
+            //         return null;
+            //     },
+            //     readDataFromExcel: (data) => {
+            //         return readDataFromExcel(data);
+            //     },
+            // });
             return config;
         },
         experimentalWebKitSupport: true,
@@ -47,7 +45,9 @@ module.exports = defineConfig({
         watchForFileChanges: false,
         viewportWidth: 1000,
         viewportHeight: 600,
-        defaultCommandTimeout: 2000
+        defaultCommandTimeout: 2000,
+        experimentalRunAllSpecs: false,
+        experimentalStudio: true,
     },
 
     // component: {
